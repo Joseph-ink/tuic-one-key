@@ -3,8 +3,9 @@
 需要自备证书
 
 
-wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/Useful-tools/main/tcp_test.sh" && chmod +x tcp_test.sh && ./tcp_test.sh
-
+```
+wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-install/main/install_tuic.sh" && chmod +x install_tuic.sh && ./install_tuic.sh
+```
 
 
 
