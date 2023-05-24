@@ -20,10 +20,40 @@ read -p "请输入tuic端口号（默认16386）：" PORT
 PORT=${PORT:-16386}
 read -p "请输入tuic密码（默认chika）：" TOKEN
 TOKEN=${TOKEN:-chika}
-read -p "请输入fullchain证书地址（默认 /root/cert/cert.crt）：" CERT
-CERT=${CERT:-/root/cert/cert.crt}
-read -p "请输入证书私钥地址（默认 /root/cert/private.key）：" PRIV_KEY
-PRIV_KEY=${PRIV_KEY:-/root/cert/private.key}
+
+# 选择证书配置方式
+echo "请选择证书配置方式："
+echo "1. 自动适配v2ray-agent证书路径（位于/etc/v2ray-agent/tls/目录下）"
+echo "2. 自定义证书路径"
+echo "3. 使用默认配置路径（位于/root/cert/目录下）"
+read -p "请输入选择（默认3）：" CERT_CHOICE
+CERT_CHOICE=${CERT_CHOICE:-3}
+
+case $CERT_CHOICE in
+  1)
+    # 自动适配V2ray-agent证书路径
+    CERT=$(ls /etc/v2ray-agent/tls/*.crt)
+    PRIV_KEY=$(ls /etc/v2ray-agent/tls/*.key)
+    ;;
+  2)
+    # 自定义证书路径
+    read -p "请输入fullchain证书路径：" CERT
+    read -p "请输入私钥证书路径：" PRIV_KEY
+    ;;
+  3)
+    # 使用默认配置路径
+    CERT="/root/cert/cert.crt"
+    PRIV_KEY="/root/cert/private.key"
+    echo "请确保证书已上传至默认路径"
+    ;;
+  *)
+    # 输入无效，使用默认配置路径
+    echo "输入无效，使用默认配置路径"
+    CERT="/root/cert/cert.crt"
+    PRIV_KEY="/root/cert/private.key"
+    echo "请确保证书已上传至默认路径"
+    ;;
+esac
 
 # 替换配置文件中的参数
 sed -i "s/\"port\": 16386/\"port\": ${PORT}/g" /root/tuic/tuic_config.json
