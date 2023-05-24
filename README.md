@@ -11,9 +11,9 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 
 | 项目 | |
 | :--- | :--- |
-| 程序 | **/root/tuic/tuic** |
-| 配置 | **/root/tuic/tuic_config.json** |
-| 检查 | `/root/tuic/tuic -c tuic_config.json` |
+| 程序 | **/etc/tuic/tuic** |
+| 配置 | **/etc/tuic/tuic_config.json** |
+| 检查 | `/etc/tuic/tuic -c tuic_config.json` |
 | 查看日志 | `journalctl -u tuic --output cat -e` |
 | 实时日志 | `journalctl -u tuic --output cat -f` |
 
