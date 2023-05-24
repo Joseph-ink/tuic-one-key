@@ -13,9 +13,6 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 | :--- | :--- |
 | 程序 | **/etc/tuic/tuic** |
 | 配置 | **/etc/tuic/tuic_config.json** |
-| 检查 | `/etc/tuic/tuic -c tuic_config.json` |
-| 查看日志 | `journalctl -u tuic --output cat -e` |
-| 实时日志 | `journalctl -u tuic --output cat -f` |
 
 
 ## Shadowrocket 配置示例
