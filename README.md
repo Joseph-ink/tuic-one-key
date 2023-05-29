@@ -3,8 +3,9 @@
 需要自备证书
 
 
+### 0.8.5 稳定版
 ```
-wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-install/main/install_tuic.sh" && chmod +x install_tuic.sh && ./install_tuic.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/0.8.5/install_tuic.sh" && chmod +x install_tuic.sh && ./install_tuic.sh
 ```
 
 
