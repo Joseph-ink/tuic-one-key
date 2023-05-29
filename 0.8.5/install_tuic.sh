@@ -17,8 +17,9 @@ fi
 curl -Lo /etc/tuic/tuic https://github.com/EAimTY/tuic/releases/download/0.8.5/tuic-server-0.8.5-${ARCH}-linux-gnu
 chmod +x /etc/tuic/tuic
 
+
 # 下载配置文件
-curl -Lo /etc/tuic/tuic_config.json https://raw.githubusercontent.com/Joseph-ink/tuic-install/main/config_server.json
+curl -Lo /etc/tuic/tuic_config.json https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/0.8.5/config_server.json
 
 # 提示用户输入配置参数
 read -p "请输入tuic端口号（默认16386）：" PORT
@@ -67,7 +68,7 @@ sed -i "s|\"certificate\": \"/root/cert/cert.crt\"|\"certificate\": \"${CERT}\"|
 sed -i "s|\"private_key\": \"/root/cert/private.key\"|\"private_key\": \"${PRIV_KEY}\"|g" /etc/tuic/tuic_config.json
 
 # 下载systemctl配置
-curl -Lo /etc/systemd/system/tuic.service https://raw.githubusercontent.com/Joseph-ink/tuic-install/main/tuic.service
+curl -Lo /etc/systemd/system/tuic.service https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/0.8.5/tuic.service
 systemctl daemon-reload
 
 # 启动程序
