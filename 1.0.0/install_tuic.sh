@@ -74,7 +74,7 @@ else
 fi
 
 # 替换配置文件中的参数
-sed -i "s|\"server\": \"[::]:443\"|\"server\": \"[::]:${PORT}\"|g" /etc/tuic/tuic_config.json
+sed -i "s|\"server\": \"\[\:\:\]:443\"|\"server\": \"\[\:\:\]:${PORT}\"|g" /etc/tuic/tuic_config.json
 sed -i "s|\"00000000-0000-0000-0000-000000000000\": \"PASSWORD\"|\"${UUID}\": \"${PASSWORD}\"|g" /etc/tuic/tuic_config.json
 sed -i "s|\"certificate\": \"/root/cert/cert.crt\"|\"certificate\": \"${CERT}\"|g" /etc/tuic/tuic_config.json
 sed -i "s|\"private_key\": \"/root/cert/private.key\"|\"private_key\": \"${PRIV_KEY}\"|g" /etc/tuic/tuic_config.json
@@ -86,3 +86,17 @@ systemctl daemon-reload
 
 # 启动程序
 systemctl enable --now tuic && sleep 0.2 && systemctl status tuic
+
+# 检查程序运行并输出重要配置信息
+if [[ $(systemctl is-active tuic) == "active" ]]
+then
+    echo "--------------------------------------------"
+    echo "安装成功!"
+    echo "--------------------------------------------"
+    echo "UUID: $UUID"
+    echo "密码: $PASSWORD"
+    echo "端口: $PORT"
+    echo "--------------------------------------------"
+else
+    echo "程序启动失败，请检查安装过程或查看相关日志"
+fi
