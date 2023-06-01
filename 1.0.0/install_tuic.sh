@@ -22,26 +22,15 @@ chmod +x /etc/tuic/tuic
 curl -Lo /etc/tuic/tuic_config.json https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/config_server.json
 
 # 提示用户输入配置参数
-read -p "是否自定义UUID（否则自动生成）? (y/n)：" UUID_CHOICE
-if [[ "$UUID_CHOICE" == "y" ]]; then
-  read -p "请输入UUID：" UUID
-else
-  UUID=$(uuidgen)
-fi
+read -p "请输入UUID（回车随机生成UUID）：" UUID
+UUID=${UUID:-$(uuidgen)}
 
-read -p "是否自定义密码（否则随机生成8位密码）? (y/n)：" PASS_CHOICE
-if [[ "$PASS_CHOICE" == "y" ]]; then
-  read -p "请输入密码：" PASSWORD
-else
-  PASSWORD=$(openssl rand -base64 6)
-fi
+read -p "请输入密码（回车随机生成8位密码）：" PASSWORD
+PASSWORD=${PASSWORD:-$(openssl rand -base64 6)}
 
-read -p "是否自定义端口（否则默认443端口）? (y/n)：" PORT_CHOICE
-if [[ "$PORT_CHOICE" == "y" ]]; then
-  read -p "请输入端口：" PORT
-else
-  PORT="443"
-fi
+read -p "请输入端口（回车默认443端口）：" PORT
+PORT=${PORT:-"443"}
+
 
 # 选择证书配置方式
 echo "请选择证书配置方式："
