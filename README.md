@@ -20,7 +20,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 | 配置 | **/etc/tuic/config_server.json** |
 
 
-## Shadowrocket 配置示例
+## Shadowrocket 配置示例（支持0.8.5版）
 
 <details><summary>点击查看</summary><br>
 
