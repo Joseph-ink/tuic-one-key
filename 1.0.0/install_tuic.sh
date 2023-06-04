@@ -14,12 +14,12 @@ if [[ "$(uname -m)" == "x86_64" ]]; then
 else
   ARCH="aarch64-unknown"
 fi
-curl -Lo /etc/tuic/tuic https://github.com/EAimTY/tuic/releases/download/tuic-server-1.0.0-beta0/tuic-server-1.0.0-beta0-${ARCH}-linux-gnu
+curl -Lo /etc/tuic/tuic https://github.com/EAimTY/tuic/releases/download/tuic-server-1.0.0-rc0/tuic-server-1.0.0-rc0-${ARCH}-linux-gnu
 chmod +x /etc/tuic/tuic
 
 
 # 下载配置文件
-curl -Lo /etc/tuic/tuic_config.json https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/config_server.json
+curl -Lo /etc/tuic/config_server.json https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/config_server.json
 
 # 提示用户输入配置参数
 read -p "请输入UUID（回车随机生成UUID）：" UUID
@@ -74,11 +74,11 @@ else
 fi
 
 # 替换配置文件中的参数
-sed -i "s|\"server\": \"\[\:\:\]:443\"|\"server\": \"\[\:\:\]:${PORT}\"|g" /etc/tuic/tuic_config.json
-sed -i "s|\"00000000-0000-0000-0000-000000000000\": \"PASSWORD\"|\"${UUID}\": \"${PASSWORD}\"|g" /etc/tuic/tuic_config.json
-sed -i "s|\"certificate\": \"/root/cert/cert.crt\"|\"certificate\": \"${CERT}\"|g" /etc/tuic/tuic_config.json
-sed -i "s|\"private_key\": \"/root/cert/private.key\"|\"private_key\": \"${PRIV_KEY}\"|g" /etc/tuic/tuic_config.json
-sed -i "s|\"zero_rtt_handshake\": false|\"zero_rtt_handshake\": ${ZRTH}|g" /etc/tuic/tuic_config.json
+sed -i "s|\"server\": \"\[\:\:\]:443\"|\"server\": \"\[\:\:\]:${PORT}\"|g" /etc/tuic/config_server.json
+sed -i "s|\"00000000-0000-0000-0000-000000000000\": \"PASSWORD\"|\"${UUID}\": \"${PASSWORD}\"|g" /etc/tuic/config_server.json
+sed -i "s|\"certificate\": \"/root/cert/cert.crt\"|\"certificate\": \"${CERT}\"|g" /etc/tuic/config_server.json
+sed -i "s|\"private_key\": \"/root/cert/private.key\"|\"private_key\": \"${PRIV_KEY}\"|g" /etc/tuic/config_server.json
+sed -i "s|\"zero_rtt_handshake\": false|\"zero_rtt_handshake\": ${ZRTH}|g" /etc/tuic/config_server.json
 
 # 下载systemctl配置
 curl -Lo /etc/systemd/system/tuic.service https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/tuic.service
