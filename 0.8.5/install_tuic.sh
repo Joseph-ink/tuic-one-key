@@ -19,7 +19,7 @@ chmod +x /etc/tuic/tuic
 
 
 # 下载配置文件
-curl -Lo /etc/tuic/tuic_config.json https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/0.8.5/config_server.json
+curl -Lo /etc/tuic/config_server.json https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/0.8.5/config_server.json
 
 # 提示用户输入配置参数
 read -p "请输入tuic端口号（默认16386）：" PORT
@@ -62,10 +62,10 @@ case $CERT_CHOICE in
 esac
 
 # 替换配置文件中的参数
-sed -i "s/\"port\": 16386/\"port\": ${PORT}/g" /etc/tuic/tuic_config.json
-sed -i "s/\"token\": \[\"chika\"\]/\"token\": [\"${TOKEN}\"]/g" /etc/tuic/tuic_config.json
-sed -i "s|\"certificate\": \"/root/cert/cert.crt\"|\"certificate\": \"${CERT}\"|g" /etc/tuic/tuic_config.json
-sed -i "s|\"private_key\": \"/root/cert/private.key\"|\"private_key\": \"${PRIV_KEY}\"|g" /etc/tuic/tuic_config.json
+sed -i "s/\"port\": 16386/\"port\": ${PORT}/g" /etc/tuic/config_server.json
+sed -i "s/\"token\": \[\"chika\"\]/\"token\": [\"${TOKEN}\"]/g" /etc/tuic/config_server.json
+sed -i "s|\"certificate\": \"/root/cert/cert.crt\"|\"certificate\": \"${CERT}\"|g" /etc/tuic/config_server.json
+sed -i "s|\"private_key\": \"/root/cert/private.key\"|\"private_key\": \"${PRIV_KEY}\"|g" /etc/tuic/config_server.json
 
 # 下载systemctl配置
 curl -Lo /etc/systemd/system/tuic.service https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/0.8.5/tuic.service
