@@ -14,9 +14,8 @@ if [[ "$(uname -m)" == "x86_64" ]]; then
 else
   ARCH="aarch64-unknown"
 fi
-curl -Lo /etc/tuic/tuic https://github.com/EAimTY/tuic/releases/download/tuic-server-1.0.0-rc0/tuic-server-1.0.0-rc0-${ARCH}-linux-gnu
+curl -Lo /etc/tuic/tuic https://github.com/EAimTY/tuic/releases/download/tuic-server-1.0.0/tuic-server-1.0.0-${ARCH}-linux-gnu
 chmod +x /etc/tuic/tuic
-
 
 # 下载配置文件
 curl -Lo /etc/tuic/config_server.json https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/config_server.json
