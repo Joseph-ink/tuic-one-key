@@ -8,7 +8,7 @@
 wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/0.8.5/install_tuic.sh" && chmod +x install_tuic.sh && ./install_tuic.sh
 ```
 
-### 1.0.0 测试版
+### 1.0.0 正式版
 ```
 wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/install_tuic.sh" && chmod +x install_tuic.sh && ./install_tuic.sh
 ```
