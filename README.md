@@ -20,20 +20,13 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 | 配置 | **/etc/tuic/config_server.json** |
 
 
-## Shadowrocket 配置示例（支持0.8.5版）
+## 编译优化
 
 <details><summary>点击查看</summary><br>
+/realm/realm_core/src/udp/mod.rs
+#UDP buffer size 4096
 
-| 选项 | 值 |
-| :--- | :--- |
-| 类型 | TUIC |
-| 地址 | VPS的IP |
-| 端口 | 16386 |
-| 密码 | chika |
-| 模式 | bbr |
-| 允许不安全 | 不选 |
-| UDP转发 | 选上 |
-| SNI | 证书中包含的域名 |
-| ALPN | h3 |
-
+/realm/realm_io/Cargo.toml
+/realm/realm_core/Cargo.toml
+#tokio 1
 </details>
