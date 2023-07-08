@@ -22,11 +22,12 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 
 ## 编译优化
 
-<details><summary>点击查看</summary><br>
+```
 /realm/realm_core/src/udp/mod.rs
 #UDP buffer size 4096
-
+```
+```
 /realm/realm_io/Cargo.toml
 /realm/realm_core/Cargo.toml
-#tokio 1
-</details>
+#dep tokio 1
+```
