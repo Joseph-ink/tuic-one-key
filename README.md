@@ -10,7 +10,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 
 ### 1.0.0 正式版
 ```
-wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/install_tuic.sh" && chmod +x install_tuic.sh && ./install_tuic.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/install.sh" && chmod +x install.sh && ./install.sh
 ```
 
 
@@ -18,16 +18,3 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 | :--- | :--- |
 | 程序 | **/etc/tuic/tuic** |
 | 配置 | **/etc/tuic/config_server.json** |
-
-
-## 编译优化
-
-```
-/realm/realm_core/src/udp/mod.rs
-#UDP buffer size 4096
-```
-```
-/realm/realm_io/Cargo.toml
-/realm/realm_core/Cargo.toml
-#dep tokio 1
-```
