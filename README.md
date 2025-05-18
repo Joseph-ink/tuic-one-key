@@ -10,7 +10,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 
 ### 1.0.0 正式版
 ```
-wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/install.sh" && chmod +x install.sh && ./install.sh
+wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tuic-one-key/main/1.0.0/install_tuic.sh" && chmod +x install_tuic.sh && ./install_tuic.sh
 ```
 
 
