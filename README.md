@@ -9,12 +9,12 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 ```
 
 
-| 项目 | |
+| 项目 | **EAimTY/tuic** |
 | :--- | :--- |
 | 程序 | **/etc/tuic/tuic** |
 | 配置 | **/etc/tuic/config_server.json** |
 
-## [TUIC](https://github.com/EAimTY/tuic](https://github.com/Itsusinn/tuic) 一键安装脚本
+## [TUIC](https://github.com/Itsusinn/tuic) 一键安装脚本
 
 ### 1.4.6
 ```
@@ -22,7 +22,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 ```
 
 
-| 项目 | |
+| 项目 | **Itsusinn/tuic** |
 | :--- | :--- |
 | 程序 | **/etc/tuic/tuic** |
 | 配置 | **/etc/tuic/config.toml** |
