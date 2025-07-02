@@ -1,4 +1,4 @@
-## [TUIC](https://github.com/EAimTY/tuic) 一键安装脚本
+## 原作者 EAimTY [TUIC](https://github.com/EAimTY/tuic) 一键安装脚本
 
 需要自备证书
 
@@ -14,7 +14,7 @@ wget -N --no-check-certificate "https://raw.githubusercontent.com/Joseph-ink/tui
 | 程序 | **/etc/tuic/tuic** |
 | 配置 | **/etc/tuic/config_server.json** |
 
-## [TUIC](https://github.com/Itsusinn/tuic) 一键安装脚本
+## 更新分支 Itsusinn [TUIC](https://github.com/Itsusinn/tuic) 一键安装脚本
 
 ### 1.4.6
 ```
